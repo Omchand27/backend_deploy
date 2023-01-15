@@ -51,7 +51,7 @@ noteRouter.delete("/delete/:id", async (req, res) => {
   const user_ID = req.body.userID;
   const data = await Notemodel.findOne({ _id: ID });
   try {
-    if (user_ID === data.userID) {
+    if (user_ID == data.userID) {
       await Notemodel.findByIdAndDelete({ _id: ID });
       res.send("Note Deleted")
     }else{
