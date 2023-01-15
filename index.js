@@ -3,10 +3,12 @@ const { connection } = require("./configs/db");
 const { userRouter } = require("./routers/users.route");
 const { noteRouter } = require("./routers/notes.router");
 const { authRouter } = require("./middleware/Auth.middleware");
+const cors = require("cors")
 
 const app = express();
 
 app.use(express.json());
+app.use(cors())
 
 app.get("/", (req, res) => {
   res.send("Welcome to Home Page");
