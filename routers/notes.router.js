@@ -48,7 +48,7 @@ noteRouter.patch("/update/:id", async (req, res) => {
 
 noteRouter.delete("/delete/:id", async (req, res) => {
   const ID = req.params.id;
-  const user_ID = req.body.user;
+  const user_ID = req.body.userID;
   const data = await Notemodel.findOne({ _id: ID });
   try {
     if (user_ID === data.userID) {
